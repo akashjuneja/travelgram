@@ -16,6 +16,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { provideAuth,getAuth } from '@angular/fire/auth';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +36,8 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
     ToastrModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebase),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideAuth(() => getAuth())
+    provideAuth(() => getAuth()),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
